@@ -1,6 +1,7 @@
 package com.npi.br.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,8 +23,8 @@ public class PessoaService {
 		return pessoaRepository.findAll();
 	}
 	
-	public Pessoa buscarContato(Long id) {
-		return pessoaRepository.getOne(id);
+	public Optional<Pessoa> buscarContato(Long id) {
+		return pessoaRepository.findById(id);
 	}
 	
 	public void excluirContato(Long id) {
